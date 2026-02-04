@@ -1,23 +1,23 @@
-const noBtn = document.getElementById("noBtn");
-const playground = document.getElementById("playground");
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
 
 function moveButton() {
-  const maxX = playground.clientWidth - noBtn.offsetWidth;
-  const maxY = playground.clientHeight - noBtn.offsetHeight;
+  const padding = 20;
+
+  const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+  const maxY = window.innerHeight - noBtn.offsetHeight - padding;
 
   const x = Math.random() * maxX;
   const y = Math.random() * maxY;
 
-  noBtn.style.left = ${x}px;
-  noBtn.style.top = ${y}px;
-  noBtn.style.transform = "none"; // IMPORTANT
+  noBtn.style.left = `${x}px`;
+  noBtn.style.top = `${y}px`;
 }
 
-// mouse
+// Mouse + touchscreen chaos
 noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("touchstart", moveButton);
 
-// touch (phone & tablet)
-noBtn.addEventListener("touchstart", (e) => {
-  e.preventDefault();
-  moveButton();
+yesBtn.addEventListener("click", () => {
+  alert("Too late. Welcome to adulthood 😈");
 });
