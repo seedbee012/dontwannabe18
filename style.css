@@ -1,100 +1,58 @@
 * {
   box-sizing: border-box;
+  font-family: system-ui, sans-serif;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-
+  height: 100vh;
+  background: linear-gradient(135deg, #ff6a6a, #ffb347);
   display: flex;
   justify-content: center;
   align-items: center;
-
-  text-align: center;
-  overflow: hidden;
 }
 
-/* Main box */
 .container {
-  width: 90%;
-  max-width: 420px;
-  padding: 20px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  width: min(90vw, 400px);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* Title */
 h1 {
-  font-size: 2rem;
-  line-height: 1.3;
-  margin-bottom: 24px;
-
-  /* 🔑 THIS FIXES THE STRETCHING TEXT */
-  word-break: break-word;
-  overflow-wrap: break-word;
+  margin-top: 0;
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
-/* Buttons wrapper */
+p {
+  font-size: 1rem;
+}
+
 .buttons {
   position: relative;
   height: 120px;
+  margin-top: 1rem;
 }
 
-/* Buttons */
 button {
+  padding: 0.7rem 1.2rem;
   font-size: 1rem;
-  padding: 14px 26px;
   border: none;
-  border-radius: 999px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
-/* Yes button */
-#yes {
-  background-color: #4CAF50;
+#yesBtn {
+  background: #4caf50;
   color: white;
 }
 
-/* No button */
-#no {
-  background-color: #ff4d4d;
+#noBtn {
+  background: #f44336;
   color: white;
   position: absolute;
   left: 50%;
-  top: 60%;
-  transform: translate(-50%, -50%);
-}
-
-/* 📱 Small phones */
-@media (max-width: 360px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  button {
-    font-size: 0.9rem;
-    padding: 12px 20px;
-  }
-}
-
-/* 📲 Tablets */
-@media (min-width: 600px) {
-  h1 {
-    font-size: 2.3rem;
-  }
-
-  .container {
-    max-width: 500px;
-  }
-}
-
-/* 💻 Laptops */
-@media (min-width: 1024px) {
-  h1 {
-    font-size: 2.6rem;
-  }
-
-  .container {
-    max-width: 520px;
-  }
+  transform: translateX(-50%);
 }
