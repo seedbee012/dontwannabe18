@@ -1,20 +1,23 @@
 const noBtn = document.getElementById("noBtn");
+const playground = document.getElementById("playground");
 
 function moveButton() {
-  const container = document.querySelector(".buttons");
-
-  const maxX = container.clientWidth - noBtn.offsetWidth;
-  const maxY = container.clientHeight - noBtn.offsetHeight;
+  const maxX = playground.clientWidth - noBtn.offsetWidth;
+  const maxY = playground.clientHeight - noBtn.offsetHeight;
 
   const x = Math.random() * maxX;
   const y = Math.random() * maxY;
 
   noBtn.style.left = ${x}px;
   noBtn.style.top = ${y}px;
+  noBtn.style.transform = "none"; // IMPORTANT
 }
 
 // mouse
-noBtn.addEventListener("mouseenter", moveButton);
+noBtn.addEventListener("mouseover", moveButton);
 
-// touch
-noBtn.addEventListener("touchstart", moveButton);
+// touch (phone & tablet)
+noBtn.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  moveButton();
+});
