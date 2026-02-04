@@ -1,44 +1,23 @@
-* {
-  box-sizing: border-box;
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+
+function moveButton() {
+  const padding = 20;
+
+  const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+  const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noBtn.style.left = `${x}px`;
+  noBtn.style.top = `${y}px`;
 }
 
-body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-}
+// Mouse + touchscreen chaos
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("touchstart", moveButton);
 
-.container {
-  padding: 20px;
-}
-
-h1 {
-  font-size: clamp(1.6rem, 5vw, 2.6rem);
-  margin-bottom: 30px;
-}
-
-button {
-  font-size: 1.1rem;
-  padding: 14px 28px;
-  margin: 10px;
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-#yes {
-  background-color: #4CAF50;
-  color: white;
-}
-
-#no {
-  background-color: #ff4d4d;
-  color: white;
-  position: absolute;
-}
+yesBtn.addEventListener("click", () => {
+  alert("Too late. Welcome to adulthood 😈");
+});
