@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  margin-bottom: 30px;
+}
+
+button {
+  font-size: 1.1rem;
+  padding: 14px 28px;
+  margin: 10px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+#yes {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#no {
+  background-color: #ff4d4d;
+  color: white;
+  position: absolute;
+}
