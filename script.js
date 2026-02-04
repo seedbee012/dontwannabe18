@@ -12,10 +12,13 @@ function moveButton() {
 
   noBtn.style.left = `${x}px`;
   noBtn.style.top = `${y}px`;
+  noBtn.style.transform = "none";
 }
 
-// Mouse + touchscreen chaos
+// Desktop hover
 noBtn.addEventListener("mouseover", moveButton);
+
+// Mobile touch
 noBtn.addEventListener("touchstart", moveButton);
 
 yesBtn.addEventListener("click", () => {
