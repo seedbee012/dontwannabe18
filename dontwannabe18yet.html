@@ -4,83 +4,19 @@
   <meta charset="UTF-8">
   <title>Congrats...?</title>
 
-  <!-- Mobile magic -->
+  <!-- Mobile / Tablet support -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    h1 {
-      font-size: clamp(1.5rem, 5vw, 2.5rem);
-      margin-bottom: 30px;
-    }
-
-    .container {
-      padding: 20px;
-    }
-
-    button {
-      font-size: 1.1rem;
-      padding: 14px 26px;
-      margin: 10px;
-      border: none;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: transform 0.1s;
-    }
-
-    #yes {
-      background-color: #4CAF50;
-      color: white;
-    }
-
-    #no {
-      background-color: #ff4d4d;
-      color: white;
-      position: absolute;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="container">
     <h1>Congrats… you’re turning 18 😏</h1>
-    <button id="yes" onclick="accept()">Yes</button>
+    <button id="yes">Yes</button>
     <button id="no">No</button>
   </div>
 
-  <script>
-    const noBtn = document.getElementById("no");
-
-    function moveButton() {
-      const padding = 20;
-      const maxX = window.innerWidth - noBtn.offsetWidth - padding;
-      const maxY = window.innerHeight - noBtn.offsetHeight - padding;
-
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
-
-      noBtn.style.left = `${x}px`;
-      noBtn.style.top = `${y}px`;
-    }
-
-    // Mouse + touch chaos
-    noBtn.addEventListener("mouseover", moveButton);
-    noBtn.addEventListener("touchstart", moveButton);
-
-    function accept() {
-      alert("Too late. Welcome to adulthood 😈");
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
