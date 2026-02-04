@@ -1,43 +1,44 @@
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
-
-function moveButton() {
-  const padding = 20;
-
-  const maxX = window.innerWidth - noBtn.offsetWidth - padding;
-  const maxY = window.innerHeight - noBtn.offsetHeight - padding;
-
-  const x = Math.random() * maxX;
-  const y = Math.random() * maxY;
-
-  noBtn.style.left = ${x}px;
-  noBtn.style.top = ${y}px;
+* {
+  box-sizing: border-box;
 }
 
-// Desktop
-noBtn.addEventListener("mouseover", moveButton);
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
 
-// Mobile / touch
-noBtn.addEventListener("touchstart", moveButton);
+.container {
+  padding: 20px;
+}
 
-// YES surprise 😈
-yesBtn.addEventListener("click", () => {
-  document.body.innerHTML = `
-    <div style="
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:black;
-      color:white;
-      text-align:center;
-      padding:20px;
-    ">
-      <h1>
-        🎉 CONGRATS 🎉<br>
-        YOU'RE 18 NOW 😈<br><br>
-        NO ESCAPE.
-      </h1>
-    </div>
-  `;
-});
+h1 {
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  margin-bottom: 30px;
+}
+
+button {
+  font-size: 1.1rem;
+  padding: 14px 28px;
+  margin: 10px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+#yes {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#no {
+  background-color: #ff4d4d;
+  color: white;
+  position: absolute;
+}
