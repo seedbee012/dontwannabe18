@@ -4,18 +4,22 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100svh; /* better mobile support */
   background: linear-gradient(135deg, #ffdde1, #ee9ca7);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+
   overflow: hidden;
 }
 
 .container {
+  position: relative; /* IMPORTANT */
   padding: 20px;
+  width: min(90vw, 400px);
 }
 
 h1 {
@@ -24,7 +28,7 @@ h1 {
 }
 
 button {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 4vw, 1.1rem);
   padding: 14px 28px;
   margin: 10px;
   border: none;
